@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.uprank.uprank">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".teacher.activity.AddNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.commonactivity.UserActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.AddExamActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.AddHomeworkActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.GoLiveActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.ExamScheduleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.NotesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.MyAttendanceDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.NoticeBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.HomeWorkActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.NotificationsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.LeaveDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.LeaveActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.TimeTableActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.StudentAttendanceActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.maincategory.MyAttendanceActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.ForgotPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.commonactivity.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".teacher.activity.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name=".teacher.utility.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

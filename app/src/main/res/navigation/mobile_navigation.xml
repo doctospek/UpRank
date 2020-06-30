@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.uprank.uprank.teacher.fragments.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/activity_main" />
+
+    <!--<activity
+        android:id="@+id/nav_home"
+        android:name="com.example.uprank.teacher.activity.HomeActivity"
+        android:label="@string/app_name"
+        tools:layout="@layout/activity_home" />-->
+
+    <activity
+        android:id="@+id/nav_myattendance"
+        android:name="com.uprank.uprank.teacher.maincategory.MyAttendanceActivity"
+        android:label="My Attendance"
+        tools:layout="@layout/activity_my_attendance" />
+
+    <activity
+        android:id="@+id/nav_timetable"
+        android:name="com.uprank.uprank.teacher.maincategory.TimeTableActivity"
+        android:label="Timetable"
+        tools:layout="@layout/activity_time_table" />
+
+    <activity
+        android:id="@+id/nav_student_attendance"
+        android:name="com.uprank.uprank.teacher.maincategory.StudentAttendanceActivity"
+        android:label="Student Attendance"
+        tools:layout="@layout/activity_student_attendance" />
+
+    <activity
+        android:id="@+id/nav_leave"
+        android:name="com.uprank.uprank.teacher.maincategory.LeaveActivity"
+        android:label="Leave"
+        tools:layout="@layout/activity_leave" />
+    <activity
+        android:id="@+id/nav_homework"
+        android:name="com.uprank.uprank.teacher.maincategory.HomeWorkActivity"
+        android:label="Homework"
+        tools:layout="@layout/activity_home_work" />
+    <activity
+        android:id="@+id/nav_notes"
+        android:name="com.uprank.uprank.teacher.maincategory.NotesActivity"
+        android:label="Notes/Study Material"
+        tools:layout="@layout/activity_notes" />
+    <activity
+        android:id="@+id/nav_noticeboard"
+        android:name="com.uprank.uprank.teacher.maincategory.NoticeBoardActivity"
+        android:label="Notice Board"
+        tools:layout="@layout/activity_notice_board" />
+    <activity
+        android:id="@+id/nav_exam_schedule"
+        android:name="com.uprank.uprank.teacher.maincategory.ExamScheduleActivity"
+        android:label="Exam Schedule"
+        tools:layout="@layout/activity_exam_schedule" />
+    <activity
+        android:id="@+id/nav_notifications"
+        android:name="com.uprank.uprank.teacher.maincategory.NotificationsActivity"
+        android:label="Timetable"
+        tools:layout="@layout/activity_notifications" />
+    <activity
+        android:id="@+id/nav_golive"
+        android:name="com.uprank.uprank.teacher.maincategory.GoLiveActivity"
+        android:label="Go Live"
+        tools:layout="@layout/activity_go_live" />
+
+
+</navigation>

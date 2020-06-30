@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_myattendance"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="My Attendance" />
+        <item
+            android:id="@+id/nav_timetable"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="TimeTable" />
+        <item
+            android:id="@+id/nav_student_attendance"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Student Attendance" />
+        <item
+            android:id="@+id/nav_leave"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Leave" />
+        <item
+            android:id="@+id/nav_homework"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Homework" />
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Study Material" />
+        <item
+            android:id="@+id/nav_noticeboard"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="NoticeBoard" />
+        <item
+            android:id="@+id/nav_exam_schedule"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Exam Schedule" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Notifications" />
+
+        <item
+            android:id="@+id/nav_golive"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Go Live" />
+    </group>
+</menu>

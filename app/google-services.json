@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "7331002997",
+    "firebase_url": "https://uprank-8734b.firebaseio.com",
+    "project_id": "uprank-8734b",
+    "storage_bucket": "uprank-8734b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7331002997:android:1cd401bc2d4f906649d63c",
+        "android_client_info": {
+          "package_name": "com.uprank.uprank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7331002997-i75c6tje5625ta10rdsvkfur2jrhpdbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpio8ldHshe9NKwy_8cKTk8tsWSEbjtZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7331002997-i75c6tje5625ta10rdsvkfur2jrhpdbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

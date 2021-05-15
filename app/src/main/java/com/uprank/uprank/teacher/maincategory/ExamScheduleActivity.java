@@ -11,15 +11,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 import com.uprank.uprank.R;
+import com.uprank.uprank.teacher.activity.AddExamActivity;
 import com.uprank.uprank.teacher.activity.HomeActivity;
 import com.uprank.uprank.teacher.adapter.ExamScheduleTabLayoutAdapter;
-import com.google.android.material.tabs.TabLayout;
 
-public class ExamScheduleActivity extends AppCompatActivity {
+public class ExamScheduleActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static ViewPager tabPager;
     TabLayout tabLayout;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,9 @@ public class ExamScheduleActivity extends AppCompatActivity {
             }
         });
 
+        floatingActionButton = findViewById(R.id.button_add);
+        floatingActionButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -99,4 +105,16 @@ public class ExamScheduleActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.button_add:
+
+                startActivity(new Intent(ExamScheduleActivity.this, AddExamActivity.class));
+
+                break;
+        }
+    }
 }

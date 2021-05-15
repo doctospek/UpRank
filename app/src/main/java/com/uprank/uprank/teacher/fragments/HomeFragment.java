@@ -34,6 +34,7 @@ import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.JsonObject;
 import com.manojbhadane.QButton;
 import com.uprank.uprank.R;
+import com.uprank.uprank.teacher.activity.LogoutActivity;
 import com.uprank.uprank.teacher.adapter.HomeAdapter;
 import com.uprank.uprank.teacher.maincategory.ExamScheduleActivity;
 import com.uprank.uprank.teacher.maincategory.GoLiveActivity;
@@ -141,7 +142,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         listeners();
         setCategoryList();
 
-        textView_name.setText(staff.getFname() + " " + staff.getLname());
+        textView_name.setText("Hello, " + staff.getFname() + " " + staff.getLname());
         textView_institute_name.setText(institute.getInstituteName());
 
         if (pref.getAttendancePref(getActivity()) == 1) {
@@ -234,6 +235,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         arrayList.add(new MainCategory(8, "Exam Schedule", R.mipmap.exam));
         arrayList.add(new MainCategory(9, "Notifications", R.mipmap.notification));
         arrayList.add(new MainCategory(10, "Go Live", R.mipmap.golive));
+       // arrayList.add(new MainCategory(11, "Logout", R.drawable.ic_baseline_exit_to_app_24));
 
         HomeAdapter homeAdapter = new HomeAdapter(getActivity(), arrayList);
         gridView.setAdapter(homeAdapter);

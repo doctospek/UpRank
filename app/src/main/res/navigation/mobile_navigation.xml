@@ -71,5 +71,11 @@
         android:label="Go Live"
         tools:layout="@layout/activity_go_live" />
 
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.uprank.uprank.teacher.activity.LogoutActivity"
+        android:label="Logout"
+        tools:layout="@layout/activity_logout" />
+
 
 </navigation>

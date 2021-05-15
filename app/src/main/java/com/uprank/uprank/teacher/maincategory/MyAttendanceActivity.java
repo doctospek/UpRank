@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -42,7 +40,7 @@ import retrofit2.Response;
 
 public class MyAttendanceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView textView_fromDate, textView_toDate, textView_present, textView_absent, select_from_date, select_to_date, text_summary_to_date;
+    private TextView textView_fromDate, textView_toDate, textView_present, textView_absent, select_from_date, select_to_date, text_summary_to_date, textView_view_details;
     private Calendar myCalendar;
     private int presentCount, absentCount;
     private String fromDate, toDate;
@@ -83,7 +81,7 @@ public class MyAttendanceActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        toolbar.inflateMenu(R.menu.main_menu);
+        //toolbar.inflateMenu(R.menu.main_menu);
 
         myCalendar = Calendar.getInstance();
 
@@ -94,6 +92,7 @@ public class MyAttendanceActivity extends AppCompatActivity implements View.OnCl
         textView_present = findViewById(R.id.text_present_days);
         textView_absent = findViewById(R.id.text_absent_days);
         text_summary_to_date = findViewById(R.id.text_summary_to_date);
+        textView_view_details = findViewById(R.id.text_viewdetails);
         pieChartView = findViewById(R.id.piechart);
 
         listeners();
@@ -128,9 +127,10 @@ public class MyAttendanceActivity extends AppCompatActivity implements View.OnCl
     private void listeners() {
         select_from_date.setOnClickListener(this);
         select_to_date.setOnClickListener(this);
+        textView_view_details.setOnClickListener(this);
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -148,7 +148,7 @@ public class MyAttendanceActivity extends AppCompatActivity implements View.OnCl
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
@@ -166,6 +166,10 @@ public class MyAttendanceActivity extends AppCompatActivity implements View.OnCl
                 new DatePickerDialog(MyAttendanceActivity.this, endDate, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                break;
+
+            case R.id.text_viewdetails:
+                startActivity(new Intent(MyAttendanceActivity.this, MyAttendanceDetailsActivity.class));
                 break;
         }
 

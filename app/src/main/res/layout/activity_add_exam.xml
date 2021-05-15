@@ -4,130 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".teacher.activity.AddExamActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="parent">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <EditText
+            android:id="@+id/text_exam_name"
+            style="@style/TextViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter Exam Name"
+            android:padding="10dp"
+            android:textColor="@color/Black"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_batch"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:smsp_hint="Select Batch"
+            app:smsp_hintColor="@color/colorPrimary"
+            app:smsp_itemColor="#512DA8"
+            app:smsp_itemListColor="#7C4DFF"
+            app:smsp_itemListHintBackgroundColor="#808080"
+            app:smsp_itemListHintColor="#FFFFFF"
+            app:smsp_multilineError="false"
+            app:smsp_selectedItemListColor="@color/Red" />
+
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner_course"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:smsp_hint="Select Course"
+            app:smsp_hintColor="@color/colorPrimary"
+            app:smsp_itemColor="#512DA8"
+            app:smsp_itemListColor="#7C4DFF"
+            app:smsp_itemListHintBackgroundColor="#808080"
+            app:smsp_itemListHintColor="#FFFFFF"
+            app:smsp_multilineError="false"
+            app:smsp_selectedItemListColor="@color/Red" />
+
+
+        <EditText
+            android:id="@+id/text_subject_name"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter Subject Name"
+            android:padding="10dp"
+            android:textColor="@color/Black"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/text_chapter_name"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter Chapter Name"
+            android:padding="10dp"
+            android:textColor="@color/Black"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_select_date"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="Start Date"
+            android:padding="10dp"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/button_selectFile"
+            style="@style/HeaderTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:elevation="10dp"
             android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:padding="5dp"
+            android:text="Select File"
+            android:textAllCaps="false"
+            android:textColor="@color/White" />
+
+        <TextView
+            android:id="@+id/text_selected_file_name"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="selected file name"
+            android:padding="10dp"
+            android:textColor="@color/Black"
+            android:textSize="15sp"
+            android:textStyle="normal" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.12"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-                    android:id="@+id/spinner_class"
-                    style="@style/TextViewStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="0.5"
-                    app:smsp_hint="Select Batch"
-                    app:smsp_hintColor="@color/colorPrimary"
-                    app:smsp_itemColor="#512DA8"
-                    app:smsp_itemListColor="#7C4DFF"
-                    app:smsp_itemListHintBackgroundColor="#808080"
-                    app:smsp_itemListHintColor="#FFFFFF"
-                    app:smsp_multilineError="false"
-                    app:smsp_selectedItemListColor="@color/Red" />
+        <Button
+            android:id="@+id/button_add_attachment"
+            style="@style/HeaderTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/montaga"
+            android:text="Upload"
+            android:textColor="@color/White" />
 
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.12"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-                    android:id="@+id/spinner_subject"
-                    style="@style/TextViewStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    app:smsp_hint="Select Course"
-                    app:smsp_hintColor="@color/colorPrimary"
-                    app:smsp_itemColor="#512DA8"
-                    app:smsp_itemListColor="#7C4DFF"
-                    app:smsp_itemListHintBackgroundColor="#808080"
-                    app:smsp_itemListHintColor="#FFFFFF"
-                    app:smsp_multilineError="false"
-                    app:smsp_selectedItemListColor="@color/Red" />
-
-                <TextView
-                    style="@style/TextViewStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="0.5"
-                    android:drawableLeft="@drawable/ic_date_range_black_24dp"
-                    android:drawablePadding="5dp"
-                    android:gravity="center"
-                    android:hint="Exam date"
-                    android:padding="10dp"
-                    android:textColor="@color/Black" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/button_selectFile"
-                style="@style/HeaderTextViewStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.05"
-                android:background="@color/colorPrimary"
-                android:elevation="10dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="Select File"
-                android:textAllCaps="false"
-                android:textColor="@color/White" />
-
-            <ImageView
-                android:id="@+id/image_selected_file"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="5dp"
-                android:layout_weight="0.6"
-                android:padding="10dp" />
-
-            <Button
-                style="@style/HeaderTextViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.08"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/montaga"
-                android:text="Upload"
-                android:textColor="@color/White" />
-
-
-        </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>
+

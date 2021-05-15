@@ -8,10 +8,11 @@
     android:background="@color/White">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/White"
+        android:orientation="vertical"
         tools:context=".teacher.maincategory.MyAttendanceActivity">
 
 
@@ -59,7 +60,7 @@
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_date_range_black_24dp"
                             android:drawablePadding="5dp"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="From date"
@@ -72,7 +73,7 @@
                             android:id="@+id/text_from_date"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="01-05-2020"
@@ -106,7 +107,7 @@
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_date_range_black_24dp"
                             android:drawablePadding="5dp"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="To date"
@@ -119,7 +120,7 @@
                             android:id="@+id/text_to_date"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="31-05-2020"
@@ -160,7 +161,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat"
+                        style="@style/TextViewStyle"
                         android:text="Summary"
                         android:textAllCaps="false"
                         android:textColor="@color/Black"
@@ -173,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:fontFamily="@font/montserrat"
+                        style="@style/TextViewStyle"
                         android:text="till"
                         android:textAllCaps="false"
                         android:textColor="@color/Black"
@@ -184,7 +185,7 @@
                         android:id="@+id/text_summary_to_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat"
+                        style="@style/TextViewStyle"
                         android:text="to date"
                         android:textAllCaps="false"
                         android:textColor="@color/Black"
@@ -211,7 +212,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="Present Days"
                             android:textAllCaps="true"
@@ -223,7 +224,7 @@
                             android:id="@+id/text_present_days"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="Present Days"
                             android:textAllCaps="true"
@@ -244,7 +245,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="Absent Days"
                             android:textAllCaps="true"
@@ -256,7 +257,7 @@
                             android:id="@+id/text_absent_days"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="Absent Days"
                             android:textAllCaps="true"
@@ -278,7 +279,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="HalfDays"
                             android:textAllCaps="true"
@@ -289,7 +290,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat"
+                            style="@style/TextViewStyle"
                             android:gravity="center"
                             android:text="HalfDays"
                             android:textAllCaps="true"
@@ -326,7 +327,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.8"
-                android:fontFamily="@font/montserrat"
+                style="@style/TextViewStyle"
                 android:text="View Details"
                 android:textAllCaps="false"
                 android:textColor="@color/Black"
@@ -357,6 +358,20 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/text_viewdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            style="@style/TextViewStyle"
+            android:gravity="center"
+            android:text="View Details"
+            android:textAllCaps="false"
+            android:textColor="@color/Black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 </ScrollView>

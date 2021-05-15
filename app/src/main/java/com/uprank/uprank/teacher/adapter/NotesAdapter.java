@@ -1,10 +1,9 @@
 package com.uprank.uprank.teacher.adapter;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.provider.MediaStore;
+import android.net.Uri;
+import android.os.ParcelFileDescriptor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.shockwave.pdfium.PdfDocument;
+import com.shockwave.pdfium.PdfiumCore;
 import com.uprank.uprank.R;
 import com.uprank.uprank.teacher.model.Note;
 import com.uprank.uprank.teacher.model.Staff;
@@ -30,6 +32,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     private ApiInterface apiInterface;
     Pref pref = new Pref();
     private Staff staff;
+    private static final String URL = "http://saiinfra.co.in/drline.saiinfra.co.in/uprank/app_api/teacher_api/uploads/";
 
     public NotesAdapter(Context context, List<Note> noteArrayList) {
         this.context = context;
@@ -67,6 +70,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         Bitmap curThumb = MediaStore.Video.Thumbnails.getThumbnail(crThumb, video_id, MediaStore.Video.Thumbnails.MICRO_KIND, options);
         holder.imageView_file.setImageBitmap(curThumb);*/
 
+
+        if (note.getFileTag().equals("pdf")) {
+
+            holder.imageView_file.setImageBitmap(generateImageFromPdf(URL + note.getFileName()));
+
+        } else {
+            Glide.with(context)
+                    .load(URL + note.getFileName())
+                    .placeholder(R.mipmap.notes)
+                    .into(holder.imageView_file);
+        }
+
     }
 
     @Override
@@ -96,5 +111,29 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    private Bitmap generateImageFromPdf(String pdfUri) {
+        int pageNumber = 0;
+        Bitmap bmp = null;
+        PdfiumCore pdfiumCore = new PdfiumCore(context);
+        try {
+            //http://www.programcreek.com/java-api-examples/index.php?api=android.os.ParcelFileDescriptor
+            ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(Uri.parse(pdfUri), "r");
+            PdfDocument pdfDocument = pdfiumCore.newDocument(fd);
+            pdfiumCore.openPage(pdfDocument, pageNumber);
+            int width = pdfiumCore.getPageWidthPoint(pdfDocument, pageNumber);
+            int height = pdfiumCore.getPageHeightPoint(pdfDocument, pageNumber);
+            bmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            pdfiumCore.renderPageBitmap(pdfDocument, bmp, pageNumber, 0, 0, width, height);
+            //saveImage(bmp);
+
+            pdfiumCore.closeDocument(pdfDocument); // important!
+
+        } catch (Exception e) {
+            //todo with exception
+        }
+
+        return bmp;
     }
 }

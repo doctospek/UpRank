@@ -61,7 +61,7 @@ public class TimeTableActivity extends AppCompatActivity {
             }
         });
 
-        toolbar.inflateMenu(R.menu.main_menu);
+        //toolbar.inflateMenu(R.menu.main_menu);
 
         Date c = Calendar.getInstance().getTime();
         dayOfTheWeek = (String) DateFormat.format("EEEE", c); // Thursday
@@ -129,7 +129,7 @@ public class TimeTableActivity extends AppCompatActivity {
 
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -146,7 +146,7 @@ public class TimeTableActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     @Override
     protected void onDestroy() {

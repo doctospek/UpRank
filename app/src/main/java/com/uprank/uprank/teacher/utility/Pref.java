@@ -91,5 +91,14 @@ public class Pref {
         editor.apply();
     }
 
+    public void clearSharedPref(Context context) {
+
+        SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.apply();
+
+    }
+
 
 }

@@ -22,7 +22,7 @@
                 android:id="@+id/arcview"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_weight="0.25"
                 android:elevation="4sp"
                 app:shape_arc_height="20sp"
                 app:shape_arc_position="bottom">
@@ -37,9 +37,9 @@
 
                     <TextView
                         android:id="@+id/text_name"
+                        style="@style/TextViewStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat"
                         android:gravity="center"
                         android:padding="10sp"
                         android:text="Name"
@@ -50,11 +50,11 @@
 
                     <com.manojbhadane.QButton
                         android:id="@+id/text_clockin"
+                        style="@style/TextViewStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/montserrat"
                         android:gravity="center"
                         android:padding="10sp"
                         android:text="@string/clock_in"
@@ -78,7 +78,8 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:visibility="gone"
-                        app:qb_backgroundColor="@color/Green" />
+                        app:qb_backgroundColor="@color/Green"
+                        style="@style/TextViewStyle"/>
 
 
                 </LinearLayout>
@@ -91,7 +92,7 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:layout_weight="0.8"
+                android:layout_weight="0.75"
                 android:gravity="center">
 
 
@@ -122,9 +123,9 @@
 
             <TextView
                 android:id="@+id/text_institute_name"
+                style="@style/TextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="10sp"
                 android:text="@string/institute_name"

@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.uprank.uprank.teacher.model.AttendanceResponse;
 import com.uprank.uprank.teacher.model.BatchResponse;
 import com.uprank.uprank.teacher.model.CourseResponse;
+import com.uprank.uprank.teacher.model.ExamResponse;
 import com.uprank.uprank.teacher.model.HomeworkResponse;
 import com.uprank.uprank.teacher.model.InstituteResponse;
 import com.uprank.uprank.teacher.model.LeaveResponse;
@@ -90,5 +91,14 @@ public interface ApiInterface {
 
     @GET("get_notes.php")
     Call<NotesResponse> get_notes(@Query("staff_id") int staff_id);
+
+    @GET("get_upcoming_exams.php")
+    Call<ExamResponse> get_upcoming_exams(@Query("staff_id") int staff_id);
+
+    @GET("get_past_exams.php")
+    Call<ExamResponse> get_past_exams(@Query("staff_id") int staff_id);
+
+    @GET("delete_exam.php")
+    Call<JsonObject> delete_exam(@Query("id") int id, @Query("staff_id") int staff_id);
 
 }

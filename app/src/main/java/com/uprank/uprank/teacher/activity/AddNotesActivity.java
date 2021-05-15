@@ -308,7 +308,7 @@ public class AddNotesActivity extends AppCompatActivity implements View.OnClickL
 
                 }
 
-                CommonUtils.successToast(AddNotesActivity.this, file_tag);
+                //CommonUtils.successToast(AddNotesActivity.this, file_tag);
 
             }
 
@@ -328,7 +328,7 @@ public class AddNotesActivity extends AppCompatActivity implements View.OnClickL
 
             selectedFilename = removeSpace(finalFile.getName());
 
-            CommonUtils.successToast(AddNotesActivity.this, file_tag);
+           // CommonUtils.successToast(AddNotesActivity.this, file_tag);
 
 
         }

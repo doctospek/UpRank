@@ -10,44 +10,49 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_myattendance"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/attendance"
             android:title="My Attendance" />
         <item
             android:id="@+id/nav_timetable"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/timetable"
             android:title="TimeTable" />
         <item
             android:id="@+id/nav_student_attendance"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/attendance"
             android:title="Student Attendance" />
         <item
             android:id="@+id/nav_leave"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/leaveicon"
             android:title="Leave" />
         <item
             android:id="@+id/nav_homework"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/homework"
             android:title="Homework" />
         <item
             android:id="@+id/nav_notes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/notes"
             android:title="Study Material" />
         <item
             android:id="@+id/nav_noticeboard"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/noticeboard"
             android:title="NoticeBoard" />
         <item
             android:id="@+id/nav_exam_schedule"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/exam"
             android:title="Exam Schedule" />
         <item
             android:id="@+id/nav_notifications"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/notification"
             android:title="Notifications" />
 
         <item
             android:id="@+id/nav_golive"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/golive"
             android:title="Go Live" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="Logout" />
     </group>
 </menu>

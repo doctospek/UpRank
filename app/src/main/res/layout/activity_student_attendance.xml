@@ -34,24 +34,23 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.15"
                 android:background="@color/colorPrimary"
-                android:visibility="invisible">
+                android:visibility="visible">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Prev"
-                    android:textColor="@color/White"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <!-- <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:gravity="center"
+                     android:padding="5dp"
+                     android:text="Prev"
+                     android:textColor="@color/White"
+                     android:textSize="18sp"
+                     android:textStyle="bold" />-->
 
-                <!--<ImageView
+                <ImageView
                     android:id="@+id/image_previous"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_arrow_back_black_24dp" />
--->
             </LinearLayout>
 
             <LinearLayout
@@ -62,9 +61,9 @@
 
                 <TextView
                     android:id="@+id/text_today_date"
+                    style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:padding="2dp"
                     android:text="Today Date"
@@ -111,14 +110,13 @@
             android:weightSum="1">
 
             <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-                android:id="@+id/spinner_class"
+                android:id="@+id/spinner_course"
+                style="@style/TextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/montserrat"
-                app:smsp_hint="Select Batch"
+                app:smsp_hint="Select Course"
                 app:smsp_hintColor="@color/Black"
-                app:smsp_hintSize="18sp"
-                app:smsp_itemSize="18sp" />
+                app:smsp_hintSize="18sp" />
 
         </LinearLayout>
 
@@ -130,16 +128,16 @@
             android:weightSum="1">
 
             <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
-                android:id="@+id/spinner_course"
+                android:id="@+id/spinner_class"
+                style="@style/TextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/montserrat"
-                app:smsp_hint="Select Course"
+                app:smsp_hint="Select Batch"
                 app:smsp_hintColor="@color/Black"
-                app:smsp_hintSize="18sp" />
+                app:smsp_hintSize="18sp"
+                app:smsp_itemSize="18sp" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,19 +151,19 @@
                 android:padding="10dp">
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:fontFamily="@font/montserrat"
                     android:text="1"
                     android:textColor="@color/Black"
                     android:textSize="18sp" />
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:fontFamily="@font/montserrat"
                     android:text="Student Name"
                     android:textColor="@color/Black"
                     android:textSize="18sp" />
@@ -174,48 +172,34 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@drawable/edt_text_round_border"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp"
                 android:weightSum="1">
 
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
                     android:background="@color/Red"
-                    android:fontFamily="@font/montserrat"
                     android:padding="5dp"
                     android:text="Absent"
                     android:textColor="@color/White"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:fontFamily="@font/montserrat"
                     android:padding="5dp"
                     android:text="Present"
                     android:textColor="@color/Green"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:fontFamily="@font/montserrat"
-                    android:padding="5dp"
-                    android:text="Halfday"
-                    android:textColor="@color/Blue"
-                    android:textSize="18sp" />
-
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -234,19 +218,19 @@
                 android:padding="10dp">
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:fontFamily="@font/montserrat"
                     android:text="1"
                     android:textColor="@color/Black"
                     android:textSize="18sp" />
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:fontFamily="@font/montserrat"
                     android:text="Student Name"
                     android:textColor="@color/Black"
                     android:textSize="18sp" />
@@ -255,48 +239,33 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@drawable/edt_text_round_border"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="10dp"
                 android:weightSum="1">
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:fontFamily="@font/montserrat"
                     android:padding="5dp"
                     android:text="Absent"
                     android:textColor="@color/Red"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
 
                 <TextView
+                    style="@style/TextViewStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
                     android:background="@color/Green"
-                    android:fontFamily="@font/montserrat"
                     android:padding="5dp"
                     android:text="Present"
                     android:textColor="@color/White"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:fontFamily="@font/montserrat"
-                    android:padding="5dp"
-                    android:text="Halfday"
-                    android:textColor="@color/Blue"
-                    android:textSize="18sp" />
-
-
+                    android:textSize="15sp" />
             </LinearLayout>
 
 

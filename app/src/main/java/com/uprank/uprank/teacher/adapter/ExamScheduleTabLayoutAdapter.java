@@ -30,13 +30,11 @@ public class ExamScheduleTabLayoutAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
 
-                UpcomingExamFragment upcomingExamFragment = new UpcomingExamFragment();
-                return upcomingExamFragment;
+                return new UpcomingExamFragment();
 
             case 1:
 
-                PastExamFragment pastExamFragment = new PastExamFragment();
-                return pastExamFragment;
+                return new PastExamFragment();
 
             default:
                 return null;

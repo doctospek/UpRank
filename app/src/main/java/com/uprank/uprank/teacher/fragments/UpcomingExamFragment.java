@@ -1,24 +1,41 @@
 package com.uprank.uprank.teacher.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
 import com.uprank.uprank.R;
-import com.uprank.uprank.teacher.activity.AddExamActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.uprank.uprank.teacher.adapter.ExamAdapter;
+import com.uprank.uprank.teacher.model.Exam;
+import com.uprank.uprank.teacher.model.ExamResponse;
+import com.uprank.uprank.teacher.model.Staff;
+import com.uprank.uprank.teacher.utility.CommonUtils;
+import com.uprank.uprank.teacher.utility.Pref;
+import com.uprank.uprank.teacher.webservices.ApiClient;
+import com.uprank.uprank.teacher.webservices.ApiInterface;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UpcomingExamFragment extends Fragment implements View.OnClickListener {
+public class UpcomingExamFragment extends Fragment {
 
 
-    FloatingActionButton floatingActionButton;
+    private ListView listView;
+    private Staff staff;
+    private Pref pref = new Pref();
+    private ApiInterface apiInterface;
+    private ExamAdapter examAdapter;
+    private ArrayList<Exam> examArrayList;
 
 
     @Override
@@ -26,6 +43,9 @@ public class UpcomingExamFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_upcoming_exam, container, false);
+
+        staff = pref.getStaffDataPref(getActivity());
+        apiInterface = ApiClient.getClient(getActivity()).create(ApiInterface.class);
 
         initView(view);
 
@@ -35,20 +55,34 @@ public class UpcomingExamFragment extends Fragment implements View.OnClickListen
 
     private void initView(View view) {
 
-        floatingActionButton = view.findViewById(R.id.add_exam);
-        floatingActionButton.setOnClickListener(this);
+
+        listView = view.findViewById(R.id.listview_upcoming);
+
+        getExams();
     }
 
-    @Override
-    public void onClick(View v) {
+    private void getExams() {
 
-        switch (v.getId()) {
+        apiInterface.get_upcoming_exams(Integer.parseInt(staff.getId())).enqueue(new Callback<ExamResponse>() {
+            @Override
+            public void onResponse(Call<ExamResponse> call, Response<ExamResponse> response) {
 
-            case R.id.add_exam:
+                if (response.body().getCode().equals("200")) {
 
-                startActivity(new Intent(getActivity(), AddExamActivity.class));
+                    examArrayList = (ArrayList<Exam>) response.body().getExam();
+                    examAdapter = new ExamAdapter(getActivity(), examArrayList);
+                    listView.setAdapter(examAdapter);
 
-                break;
-        }
+                } else {
+                    CommonUtils.errorToast(getActivity(), response.body().getMsg());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ExamResponse> call, Throwable t) {
+
+            }
+        });
     }
+
 }

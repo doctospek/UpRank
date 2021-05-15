@@ -19,6 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".teacher.activity.ExitActivity"></activity>
+        <activity android:name=".teacher.activity.LogoutActivity" />
         <activity
             android:name=".teacher.activity.AddNotesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
